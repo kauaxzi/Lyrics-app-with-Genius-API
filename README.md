@@ -3,7 +3,9 @@ How to Run the Application Locally
 Follow these steps to set up and run the application on your local machine:
 
 Step 1: Install Python
+
 Download and install Python from the official website: https://www.python.org/downloads/
+
 Make sure to check the option "Add Python to PATH" during installation so you can run Python commands from the terminal.
 
 Step 2: Install Required Dependencies
