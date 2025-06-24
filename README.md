@@ -1,4 +1,5 @@
 How to Run the Application Locally
+
 Follow these steps to set up and run the application on your local machine:
 
 Step 1: Install Python
