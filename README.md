@@ -20,3 +20,5 @@ Navigate to the folder where your application code is located and run the main P
 
 python app.py
 After running the command, the terminal will show a localhost URL (usually something like ```http://127.0.0.1:5000).``` Open this URL in your web browser to access and test the application locally.
+
+This code is purely educational and may not work properly. This project will be discontinued.
