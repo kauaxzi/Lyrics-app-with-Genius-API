@@ -14,6 +14,8 @@ Open your terminal or VS Code terminal and run the following commands to install
 
 ```pip install flask```
 ```pip install lyricsgenius```
+```pip install requests```
+
 
 Step 3: Run the Application
 Navigate to the folder where your application code is located and run the main Python file (e.g., app.py) with:
