@@ -4,7 +4,6 @@ import requests
 
 app = Flask(__name__)
 
-# Token da Genius
 GENIUS_API_TOKEN = "PBj78jewAAmw6KJWJFLX2ygN2O2T3NEXy1QY1EsDfi84wk9zKQ-X0CWZd9Fksrzy"
 genius = lyricsgenius.Genius(GENIUS_API_TOKEN)
 
