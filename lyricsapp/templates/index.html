@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Lyric Finder & Translator 🎶</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎵 Buscador de Letras & Tradutor 🎵</h1>
+
+        <input type="text" id="artist" placeholder="Artista">
+        <input type="text" id="song" placeholder="Nome da Música">
+        <button onclick="getLyrics()">Buscar Letra</button>
+
+        <h2>Letra:</h2>
+        <textarea id="lyrics" readonly></textarea>
+
+        <button onclick="translateLyrics()">Traduzir para Português 🇧🇷</button>
+
+        <h2>Tradução:</h2>
+        <textarea id="translatedLyrics" readonly></textarea>
+    </div>
+
+    <script>
+        function getLyrics() {
+            const artist = document.getElementById('artist').value;
+            const song = document.getElementById('song').value;
+
+            fetch('/get_lyrics', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ artist: artist, song: song })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('lyrics').value = data.lyrics || 'Letra não encontrada!';
+            })
+            .catch(error => console.error('Erro ao buscar letra:', error));
+        }
+
+        function translateLyrics() {
+            const text = document.getElementById('lyrics').value;
+
+            fetch('/translate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text: text })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('translatedLyrics').value = data.translatedText || 'Falha na tradução!';
+            })
+            .catch(error => console.error('Erro ao traduzir:', error));
+        }
+    </script>
+</body>
+</html>
