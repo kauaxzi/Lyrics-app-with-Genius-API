@@ -9,6 +9,7 @@ Download and install Python from the official website: https://www.python.org/do
 Make sure to check the option "Add Python to PATH" during installation so you can run Python commands from the terminal.
 
 Step 2: Install Required Dependencies
+
 Open your terminal or VS Code terminal and run the following commands to install Flask and the Genius API dependency:
 
 ```pip install flask```
